@@ -24,3 +24,21 @@ a {
    color: green;
    text-decoration: none; 
 }
+
+a:visited {
+    color: green;
+    background-color: white;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+    background-color: white;
+    font-weight: bold;
+}
+
+a:active {
+    color: pink;
+    background-color: green;
+}
+
