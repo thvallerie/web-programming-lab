@@ -42,3 +42,24 @@ a:active {
     background-color: green;
 }
 
+div {
+    text-align: justify;
+    text-indent: 1.25 cm;
+    line-height: 150%;
+}
+.formula {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid;
+    text-indent: 0;
+    margin: 10px 40px 10px 40px;
+    padding: 5px;
+}
+
+.formula-description {
+    color: black;
+    margin-left: 2 cm;
+    text-indent: 0;
+}
