@@ -6,14 +6,15 @@ body {
 }
 
 header {
-    background: linear-gradient(to right top, maroon, grey, black, lightgray);
-    color: white;
+    background: linear-gradient(to right top, black, lightgrey, maroon, gray);
+    color: maroon;
     padding: 10px;
     font-size: 16pt;
+    font-weight: bold;
 }
 
 footer {
-    background:linear-gradient(to right top, black, grey, maroon, lightgray);
+    background:linear-gradient(to right top, black, lightgrey, maroon, gray);
     color: white;
     padding: 10px;
     font-size: 16pt;
