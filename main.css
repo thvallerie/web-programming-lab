@@ -13,7 +13,7 @@ header {
 }
 
 footer {
-    background:linear-gradient(to right top, maroon, grey, black, lightgray);
+    background:linear-gradient(to right top, black, grey, maroon, lightgray);
     color: white;
     padding: 10px;
     font-size: 16pt;
@@ -23,6 +23,7 @@ footer {
 a {
    color: green;
    text-decoration: none; 
+   transition: 0ms 0.3s;
 }
 
 a:visited {
@@ -35,6 +36,7 @@ a:hover {
     text-decoration: underline;
     background-color: white;
     font-weight: bold;
+    text-shadow:2px 2px 3px gray;
 }
 
 a:active {
