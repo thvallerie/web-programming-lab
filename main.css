@@ -69,3 +69,24 @@ div {
     margin-left: 2 cm;
     text-indent: 0;
 }
+
+.shadow {
+    text-shadow: 5px 5px 2px gray;
+}
+
+.shadow1 {
+    text-shadow: 0px 3px 2px blue;
+}
+
+.shadow2 {
+    text-shadow: 2px 2px 3px darkblue;
+}
+
+.shadow3 {
+    transition: 600ms 1s;
+}
+.shadow3:hover {
+    text-shadow: 2px 2px 3px gray;
+    opacity: 1;
+    color: maroon;
+}
