@@ -8,15 +8,29 @@
     <link rel="stylesheet" href="main.css"></title>
     <style>
 div {
+  color: white;
     margin: 20px;
     border: 1px solid;
     border-radius: 7px;
     padding: 7px;
     width: 500px;
-    height: 250px;
+    height: 120px;
     overflow-y: auto;
-    overflow-x: hidden ;
+    overflow-x: hidden;
+    position: relative;
+    background: linear-gradient(91deg, maroon, #9e9e9e);
+    z-index: 1;
     }
+.second {
+  z-index: 0;
+  left: 440px;
+  top: 120px;
+  position: fixed;
+}
+.second:hover {
+z-index: 2;
+}
+
     </style>
     
 </head>
@@ -35,7 +49,7 @@ div {
          Ведь технология – всего лишь метод действия или способ производства чего-либо.
       </div>
 
-      <div>
+      <div class="second">
         Далеко-далеко, в Калифорнии, безработные негры думали, что дома могут только дорожать, и банки
         почему-то думали точно так же – и выдавали им ничем не обеспеченные кредиты. Безработный «покупал» дом за 150 тысяч долларов без первого
         взноса, платил по 700 долларов в месяц, а через полгода оказывалось, что его дом стоит уже 180 тысяч, он его продавал и покупал дом за 200 тысяч, вложив
