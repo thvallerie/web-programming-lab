@@ -12,6 +12,13 @@ header {
     font-size: 16pt;
     font-weight: bold;
 }
+header:hover {
+    background: gray;
+    text-shadow: 2px 2px 3px maroon;
+    opacity: 1;
+    color: black;
+    font-size: 18pt;
+}
 
 footer {
     background:linear-gradient(to right top, black, lightgrey, maroon, gray);
@@ -19,6 +26,13 @@ footer {
     padding: 10px;
     font-size: 16pt;
     text-align: right;
+}
+footer:hover {
+    background: gray;
+    text-shadow: 2px 2px 3px maroon;
+    opacity: 1;
+    color: black;
+    font-size: 18pt;
 }
 
 a {
