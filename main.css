@@ -12,6 +12,10 @@ header {
     font-size: 16pt;
     font-weight: bold;
 }
+
+main {
+    margin: 10px 20px;
+}
 header:hover {
     background: gray;
     text-shadow: 2px 2px 3px maroon;
