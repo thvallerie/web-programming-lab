@@ -79,7 +79,28 @@
             flex-direction: row;
         }
 
+        .circle_container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
         
+            gap: 20px;
+            
+        }
+
+        .circle {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            
+            width: 50px;
+            height: 50px;
+
+            border-radius: 25px;
+            border: 1px solid black;
+        }
     </style>
 </head>
 
@@ -138,7 +159,20 @@
         
     </div>
     
-     
+    <div style="height: 100px;"></div>
+
+    <div class="circle_container">
+        <div class="circle" style="background-color:aqua;">1</div>
+        <div class="circle" style="background-color:blue;">2</div>
+        <div class="circle" style="background-color:bisque;">3</div>
+        <div class="circle" style="background-color:blueviolet;">4</div>
+        <div class="circle" style="background-color:cornflowerblue;">5</div>
+        <div class="circle" style="background-color:darkgreen;">6</div>
+        <div class="circle" style="background-color:crimson;">7</div>
+        <div class="circle" style="background-color:dodgerblue;">8</div>
+        <div class="circle" style="background-color:fuchsia;">9</div>
+        <div class="circle" style="background-color:lightpink;">10</div>
+    </div>
 
 </main>
 
@@ -234,7 +268,22 @@
             
             const resultValue = (appleCount * appleCost) + (pearCount * pearCost) + (orangeCount * orangeCost) + (melonCount * melonCost);
             resultCost.innerHTML = `${resultValue}руб`;
-        }   
+        }  
+        
+        const arrayOfCircles = document.getElementsByClassName("circle");
+
+        for (let i = 0; i < arrayOfCircles.length; i++) 
+            {
+                arrayOfCircles[i].addEventListener('click', (event) => {
+                    let div = event.srcElement;
+                    
+                    div.style.border = "none";
+                    div.style.backgroundColor = "transparent";
+                    div.innerHTML = "";
+
+                }, false);
+                
+            }
 </script>
 
 </body>
