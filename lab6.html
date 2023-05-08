@@ -6,6 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Бут Валерия Сергеевна. Лабораторная 6</title>
     <link rel="stylesheet" href="main.css">
+
+    <style>
+      main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Game 4 + 5 */
+        .game4 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            
+            width: 50vw;
+        }
+
+        .game4_start_container, .game4_main_container, .game4_restart_container, .game4_rules_container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            width: 100%;
+            
+            border: 2px solid rgb(94, 149, 130);
+            border-radius: 30px;
+        }
+
+        .game4_start_container {
+            height: 50px;
+        }
+
+        .game4_rules_container {
+            background-color: rgb(94, 149, 130);
+        }
+
+        #Game4_UnShowRules, #Game4_ShowRules {
+            margin: 20px;
+        }
+     
+    </style>
+
 </head>
 
 <body>
@@ -14,12 +59,120 @@
     </header>
 
     <main>
+        <div class="game4">
+            <div class="game4_start_container" id="game4_start_container">
+                <button onclick="startGame4()">Сыграть в игру!</button>
+            </div>
+            
+            <div class="game4_main_container" id="game4_main_container">
+                <h2>Угадай число!</h2>
+                <div>Задумано число от 1 до 100. Угадайте какое?</div>
+                <input id="Game4_inputField" type="number" min="1" max="100">
+                <button onclick="tryToWin4()">Угадать</button>
+            </div>
+            
+            <div class="game4_restart_container" id="game4_restart_container">
+                <h1>Поздравляем, вы выиграли!</h1>
+                <div id="Game4_randomNumberField">Задуманное число: </div>
+                <div id="Game4_maxTriesField">Количество попыток: </div>
+                <button onclick="playAgain4()">Сыграть еще раз!</button>
+            </div>
+
+            <div class="game4_rules_container" id="game4_rules_container">
+                <button id="Game4_ShowRules" onclick="ShowRules4()">Показать правила</button>
+                <button id="Game4_UnShowRules" onclick="UnShowRules4()">Скрыть правила</button>
+                <div class="game4_rules_text_container" id="game4_rules_text_container">
+                    <div>А. Сначала нажмите на кнопку "сыграть в игру".</div>
+                    <div>B. Затем выберите число.</div>
+                    <div>C. Потом нажмите кнопку играть.</div>
+                    <div>D. Если угадали загаданное число, игра окончена.</div>
+                    <div>E. Если не угадали число, играте заново.</div>
+                </div>
+            </div>
+        </div>
 
     </main>
 
     <footer>
         &copy; Бут Валерия, ФБИ-13, 2 курс, 2023
     </footer>
+
+    <script>
+        // Game 4 + 5
+        const startContainer = document.getElementById("game4_start_container");
+        const mainContainer = document.getElementById("game4_main_container");
+        const restartContainer = document.getElementById("game4_restart_container");
+        
+        const inputField = document.getElementById("Game4_inputField");
+
+        const randomNumberField = document.getElementById("Game4_randomNumberField");
+        const maxTriesField = document.getElementById("Game4_maxTriesField");
+        const randomNumberFieldContent = randomNumberField.innerHTML;
+        const maxTriesFieldContent = maxTriesField.innerHTML;
+
+        const showRulesButton = document.getElementById("Game4_ShowRules");
+        const unShowRulesButton = document.getElementById("Game4_UnShowRules");
+        const rulesTextContainer = document.getElementById("game4_rules_text_container");
+
+        mainContainer.style.display = "none";
+        restartContainer.style.display = "none";
+        
+        unShowRulesButton.style.display = "none";
+        rulesTextContainer.style.display = "none";
+
+        let randomNumberOnStart = 0;
+        let tries = 0;
+
+        function startGame4() 
+        {
+            console.log(randomNumberOnStart); // DEBUG ONLY
+            randomNumberOnStart = Math.floor(Math.random() * 100); 
+            tries = 0;
+            inputField.value = "0";
+            
+            startContainer.style.display = "none";
+            mainContainer.style.display = "flex";
+        }
+        
+        function tryToWin4()
+        {
+            const userVar = parseInt(inputField.value);
+            
+            if (userVar === randomNumberOnStart)
+            {
+                mainContainer.style.display = "none";
+                startContainer.style.display = "none";
+                restartContainer.style.display = "flex";
+
+                randomNumberField.innerHTML = `${randomNumberFieldContent} ${randomNumberOnStart}`;
+                maxTriesField.innerHTML = `${maxTriesFieldContent} ${tries}`;
+            }
+            else
+            {
+                tries++;
+            }
+        }
+
+        function playAgain4()
+        {
+            startContainer.style.display = "flex";
+            restartContainer.style.display = "none";
+        }
+
+        function ShowRules4()
+        {
+            showRulesButton.style.display = "none";
+            unShowRulesButton.style.display = "block";
+            rulesTextContainer.style.display = "block";
+        }
+
+        function UnShowRules4()
+        {
+            showRulesButton.style.display = "block";
+            unShowRulesButton.style.display = "none";
+            rulesTextContainer.style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
