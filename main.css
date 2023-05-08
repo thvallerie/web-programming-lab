@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background: linear-gradient(to right top, black, lightgrey, maroon, gray);
+    background: linear-gradient(to right top, rgb(94, 149, 130), lightgray, maroon, rgb(198, 185, 148));
     color: maroon;
     padding: 10px;
     font-size: 16pt;
@@ -17,15 +17,15 @@ main {
     margin: 10px 20px;
 }
 header:hover {
-    background: gray;
+    background: rgb(234, 224, 196);
     text-shadow: 2px 2px 3px maroon;
     opacity: 1;
-    color: black;
+    color: white;
     font-size: 18pt;
 }
 
 footer {
-    background:linear-gradient(to right top, black, lightgrey, maroon, gray);
+    background:linear-gradient(to right top, rgb(94, 149, 130), lightgrey, maroon, rgb(198, 185, 148));
     color: white;
     padding: 10px;
     font-size: 16pt;
@@ -38,26 +38,26 @@ footer {
 }
 
 footer:hover {
-    background: gray;
+    background:rgb(94, 149, 130) ;
     text-shadow: 2px 2px 3px maroon;
     opacity: 1;
-    color: black;
+    color: white;
     font-size: 18pt;
 }
 
 a {
-   color: green;
+   color: rgb(94, 149, 130);
    text-decoration: none; 
    transition: 0ms 0.3s;
 }
 
 a:visited {
-    color: green;
-    background-color: white;
+    color: rgb(94, 149, 130);
+    background-color: rgb(198, 185, 148);
 }
 
 a:hover {
-    color: red;
+    color: maroon;
     text-decoration: underline;
     background-color: white;
     font-weight: bold;
