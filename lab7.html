@@ -8,18 +8,42 @@
     <link rel="stylesheet" href="main.css">
 </head>
 
+<style>
+    #blocks {
+        height: 30px;
+        width: 200px;
+        
+    }
+</style>
+
 <body>
     <header>
-        НГТУ, ФБ, Лабораторная работа 6
+        НГТУ, ФБ, Лабораторная работа 7
     </header>
 
     <main>
-
+      <button onclick="addBlocks()">Создать блоки</button>
+      <div id="blocks"></div>
     </main>
 
     <footer>
         &copy; Бут Валерия, ФБИ-13, 2 курс, 2023
     </footer>
-    
+
+    <script>
+        function addBlocks() {
+                let blocks = document.getElementById('blocks');
+                for(let i = 0; i < 10; i++) {
+                let block = document.createElement('div');
+                block.innerHTML = 'Блок №' + (i+1) + ': ' + (2*i**2);
+
+                blocks.appendChild(block);
+                block.style.backgroundColor = 'rgb(94, 149, 130)';
+                block.style.color = 'white';
+                block.style.margin = '20px'
+        }
+        }
+
+    </script>
 </body>
 </html>
