@@ -134,7 +134,7 @@
 
 <body>
     <header>
-        НГТУ, ФБ, Лабораторная работа 5
+        НГТУ, ФБ, Лабораторная работа 6
     </header>
 
     <main>
@@ -147,7 +147,8 @@
                 <h2>Угадай число!</h2>
                 <div>Задумано число от 1 до 100. Угадайте какое?</div>
                 <input id="Game4_inputField" type="number" min="1" max="100">
-                <button onclick="tryToWin4()">Угадать</button>
+                <button onclick="tryToWin4()">Угадать</button> 
+                <div id="Game4_help"></div>
             </div>
             
             <div class="game4_restart_container" id="game4_restart_container">
@@ -229,6 +230,8 @@
         const unShowRulesButton = document.getElementById("Game4_UnShowRules");
         const rulesTextContainer = document.getElementById("game4_rules_text_container");
 
+        const helpField = document.getElementById("Game4_help");
+
         mainContainer.style.display = "none";
         restartContainer.style.display = "none";
         
@@ -244,6 +247,7 @@
             randomNumberOnStart = Math.floor(Math.random() * 100); 
             tries = 0;
             inputField.value = "0";
+            helpField.innerHTML = "";
             
             startContainer.style.display = "none";
             mainContainer.style.display = "flex";
@@ -253,7 +257,17 @@
         {
             const userVar = parseInt(inputField.value);
             
-            if (userVar === randomNumberOnStart)
+            if (userVar > randomNumberOnStart)
+            {
+                helpField.innerHTML = "Введенное число слишком большое";
+                tries++;
+            }
+            else if (userVar < randomNumberOnStart)
+            {
+                helpField.innerHTML = "Введеное число слишком маленькое";
+                tries++;
+            } 
+            else if (userVar === randomNumberOnStart)
             {
                 mainContainer.style.display = "none";
                 startContainer.style.display = "none";
@@ -262,10 +276,7 @@
                 randomNumberField.innerHTML = `${randomNumberFieldContent} ${randomNumberOnStart}`;
                 maxTriesField.innerHTML = `${maxTriesFieldContent} ${tries}`;
             }
-            else
-            {
-                tries++;
-            }
+            
         }
 
         function playAgain4()
