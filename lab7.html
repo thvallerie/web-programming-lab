@@ -9,14 +9,18 @@
 </head>
 
 <style>
-    #blocks {
-        height: 2px;
+   #blocks {
         width: 200px;
-        
     }
 
-    #transparent-blocks {
-       opacity: 0.5;
+    .transparent-blocks {
+        padding: 10px; 
+        background: darkturquoise;
+        margin: 0 auto; 
+        width: 50%;  
+        opacity: 0.7;
+
+
     }
 </style>
 
@@ -42,7 +46,7 @@
     </footer>
 
     <script>
-        function addBlocks() {
+       function addBlocks() {
                 let blocks = document.getElementById('blocks');
                 for(let i = 0; i < 10; i++) {
                 let block = document.createElement('div');
@@ -51,7 +55,7 @@
                 blocks.appendChild(block);
                 block.style.backgroundColor = 'rgb(94, 149, 130)';
                 block.style.color = 'white';
-                block.style.margin = '20px'
+                block.style.margin = '20px';
         }
         }
 
@@ -81,11 +85,13 @@
                 for(let i = 0; i < 10; i++) {
                 let block = document.createElement('div');
                 block.innerHTML = 'Блок №' + (i+1) + ': ' + (2*i**2);
+                let percent = i*10;
 
-                blocks.appendChild(transparent-blocks);
-                block.style.backgroundColor = 'opacity';
+                transparentblocks.appendChild(block);
+                block.style.backgroundColor = 'rgb(94, 149, 130)';
                 block.style.color = 'white';
                 block.style.margin = '20px'
+                block.style.opacity = percent + '%';
         }
         }
     </script>
