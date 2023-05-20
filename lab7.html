@@ -19,8 +19,38 @@
         margin: 0 auto; 
         width: 50%;  
         opacity: 0.7;
+    }
 
+    .circle {
+        width: 64px;
+        height: 64px;
+        display: flex;
+        border-radius: 50%;
+        background-color: gray;
+        color: white;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        margin: 10px;
+        margin-bottom: 10px;
+    }
+    .circle:nth-child(even) {
+        background-color: rgb(94, 149, 130);
+    }
+    .circle:nth-child(odd) {
+        background-color: maroon;
+    }
 
+    #table {
+        background-color: rgb(171, 27, 27);
+        margin: 20px auto;
+        color: white;
+    }
+
+    #course {
+        margin: 20px;
+        margin-bottom: 20px;
     }
 </style>
 
@@ -39,6 +69,17 @@
 
       <button onclick="addTransparentBlocks()">Создать полупрозрачные блоки</button>
       <div id="transparent-blocks"></div>
+
+      <input type="text" value="5" placeholder="Введите число кругов" id="count"/>
+        <button id="circle" onclick="circles()">Бордо / Мята</button>
+        <div id="circles"></div>
+
+        <button id="table" onclick="table()">Таблица умножения на 93</button>
+        <div style="background-color: rgb(122, 169, 153); width: 150px; text-align: center; color: white;" id="multiplication"></div>
+
+        <button id="init" onclick="init()">Курс акций Фармсинтез</button>
+        <table id="course" border="1"></table>
+
     </main>
 
     <footer>
@@ -93,7 +134,66 @@
                 block.style.margin = '20px'
                 block.style.opacity = percent + '%';
         }
+
+        function circles() {
+            let count = Number(document.getElementById("count").value);
+            let circles = document.getElementById("circles");
+            circles.innerHTML = "";
+            if (!count && count === 0) return alert("Укажите число кругов");
+            for (let i = count; i > 0; i--) {
+                let circle = document.createElement("div");
+                circle.classList.add("circle");
+                circle.innerText = i;
+                circles.append(circle);
+            }
+    }
+        document.getElementById("circle").onclick = circles;
         }
+
+        function table() {
+        let multiplication = document.getElementById("multiplication");
+        for(let i = 13; i <= 33; i++) {
+          let element = document.createElement("p");
+          element.innerText = `${i} * 93 = ${i * 93}`;
+          multiplication.append(element);
+        }
+      }
+      document.getElementById("table").onclick = table;
+
+      function init() {
+        let table = document.getElementById("course");
+        let middleText = document.createElement("p");
+        let maxText = document.createElement("p");
+        let minText = document.createElement("p");
+ 
+        let prices = [7.66, 7.67, 7.93, 7.65, 7.52, 7.51, 7.71, 7.59, 7.43,7.11];
+        let dates = ["19.05.2023", "18.05.2023", "17.05.2023", "16.05.2023", "15.05.2023", "12.05.2023", "11.05.2023", "10.05.2023", "08.05.2023", "05.05.2023"];
+        let sum = 0, max, min;
+ 
+        for(let i = 0; i < prices.length; i++) {
+            const element = document.createElement("tr");
+            const date = document.createElement("td");
+            const price = document.createElement("td");
+            const razn = document.createElement("td");
+            date.innerText = dates[i];
+            price.innerText = prices[i];
+            razn.innerText = i != 0 ? Number(prices[i] - prices[i - 1]).toFixed(2) : "-";
+            element.append(date);
+            element.append(price);
+            element.append(razn);
+            table.append(element);
+            sum += prices[i];
+            max = max > prices[i] ? max : prices[i];
+            min = min < prices[i] ? min : prices[i];
+        }
+        middleText.innerText = `Средняя стоимость акции: ${Number(sum / prices.length).toFixed(2)}`;
+        maxText.innerText = `Максимальная стоимость акции: ${Number(max).toFixed(2)}`;
+        minText.innerText = `Минимальная стоимость акции: ${Number(min).toFixed(2)}`;
+        document.body.append(middleText);
+        document.body.append(maxText);
+        document.body.append(minText);
+    }
+        document.getElementById("init").onclick = init;
     </script>
 
 </body>
