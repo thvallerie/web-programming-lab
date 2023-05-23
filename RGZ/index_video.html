@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Видео о компании</title>
+
+        <link rel="stylesheet" href="index_video.css">
+
+        <link rel="stylesheet" href="header_style.css">
+        <link rel="stylesheet" href="footer_style.css">
+
+        <script src="header_script.js"></script>
+
+    </head>
+
+    <body>
+
+        <div class="header_container">
+            <div class="header_button" onclick="redirectToPage('index_aboutCompany.html')">О компании</div>
+            <div class="header_button" onclick="redirectToPage('index_contactDetails.html')">Контактная информация</div>
+            <div class="header_button" onclick="redirectToPage('index_mainFinancialIndicators.html')">Основные финансовые показатели</div>
+            <div class="header_button header_activated_button" onclick="redirectToPage('index_video.html')">Видео</div>
+        </div>
+
+        <div class="content_container">
+            <div class="content_element">
+                <div class="content_element_header">
+                    <h1>Видеоролик о компании</h1>
+                    <div><iframe width="800" height="600" src="https://www.youtube.com/embed/KtD6dJGTRLE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer_container">
+            <div style="display: flex; flex-direction: column;">
+                <div>АО "Группа ГМС"</div>
+                <div>125047, г. Москва, ул. Чаянова, д.7</div>
+                <div>Тел.: +7 (495) 730-66-01</div>
+                <div>www.grouphms.ru</div>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <a href="#">Политика в отношении обработки персональных данныx</a>
+                <a href="#">Политика в отношении защиты коммерческой тайны
+                    и интеллектуальной собственности</a>
+                <a href="#">Общее уведомление о порядке обращения с конфиденциальной информацией</a>
+                <a href="#">Уведомление об обращении с конфиденциальной информацией на веб-сайте</a>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <div>© 2009-2023 ООО "УК "Группа ГМС"</div>
+                <a href="#">Горячая линия Группы ГМС</a>
+                <a href="#">Ограничение ответственности</a>
+                <div></div>
+            </div>
+        </div>
+
+    </body>
+
+</html>

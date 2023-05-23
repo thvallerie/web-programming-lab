@@ -1,0 +1,41 @@
+.content_container {
+    margin-top: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    height: 100%;
+    width: 100%;
+}
+
+.content_element {
+    display: flex;
+    flex-direction: row;
+
+    width: 1000px;
+    height: 550px;
+
+    background: linear-gradient(to right, #9d2929, #767878, #527764);
+    color: white;
+
+    border-radius: 50px;
+}
+
+.content_element_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 2;
+    padding-left: 50px;
+    font-family: Verdana;
+    font-size: 15px;
+    
+}
+
+.content_element_image {
+    flex: 1;
+    
+}
