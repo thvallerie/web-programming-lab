@@ -46,12 +46,14 @@
         background-color: rgb(171, 27, 27);
         margin: 20px auto;
         color: white;
+        margin-bottom: 10px;
     }
 
     #course {
-        margin: 20px;
-        margin-bottom: 20px;
+        margin: 40px;
+
     }
+
 </style>
 
 <body>
@@ -79,7 +81,8 @@
 
         <button id="init" onclick="init()">Курс акций Фармсинтез</button>
         <table id="course" border="1"></table>
-
+        <div style="padding: 30px; bottom: 10px;" id="courseData"></div>
+        
     </main>
 
     <footer>
@@ -158,6 +161,7 @@
             multiplication.append(element);
             }
         }
+
         document.getElementById("table").onclick = table;
 
         function init() {
@@ -189,11 +193,16 @@
             middleText.innerText = `Средняя стоимость акции: ${Number(sum / prices.length).toFixed(2)}`;
             maxText.innerText = `Максимальная стоимость акции: ${Number(max).toFixed(2)}`;
             minText.innerText = `Минимальная стоимость акции: ${Number(min).toFixed(2)}`;
+
             document.body.append(middleText);
             document.body.append(maxText);
             document.body.append(minText);
+
+            document.getElementById("courseData").append(middleText);
+            document.getElementById("courseData").append(maxText);
+            document.getElementById("courseData").append(minText);
         }
-            document.getElementById("init").onclick = init;
+           
     </script>
 
 </body>
