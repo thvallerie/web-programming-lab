@@ -1,5 +1,5 @@
 .content_container {
-    margin-top: 100px;
+    margin-top: 80px;
 
     display: flex;
     flex-direction: column;
@@ -20,10 +20,11 @@
     width: 1000px;
     height: 850px;
 
-    background: linear-gradient(to right, #9d2929, #767878, #527764);
-    color: white;
+    background: linear-gradient(to bottom, #e6e7e8, #e2e4e4, #d4d4d4);
+    color: rgb(90, 89, 89);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.40);
 
-    border-radius: 50px;
+    border-radius: 3px;
     font-family: Verdana;
 }
 

@@ -11,14 +11,14 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
 
     background-color: white ;
 
     top: 0;
 
     width: 100%;
-    height: 100px;
+    height: 77px;
 
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.40);
     position: fixed;
@@ -32,13 +32,13 @@ body {
     background-color: white;
     color:black;
 
-    border-radius: 20px;
+    border-radius: 3px;
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.40);
 
     font-size: 23px;
     font-family: Verdana;
-    font-weight: bold;
-    padding: 10px;
+
+    padding: 18px;
 
     cursor: pointer;
 
@@ -51,6 +51,6 @@ body {
 }
 
 .header_activated_button {
-    background: linear-gradient(to right, #9d2929, #767878, #527764);
+    background-color:#b52d2d ;
     color: white;
 }
