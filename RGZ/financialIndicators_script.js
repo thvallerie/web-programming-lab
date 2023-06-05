@@ -93,6 +93,7 @@ date_to_min_value.set("03.04.2023", "98.50");
 
 const max_array = []
 const min_array = []
+const avg_array = []
 
 for (const [key, value] of date_to_max_value) {
     max_array.push(Number(value))
@@ -102,11 +103,23 @@ for (const [key, value] of date_to_min_value) {
     min_array.push(Number(value))
 }
 
+for (let i = 0; i < max_array.length; i++) {
+    avg_array.push((max_array[i] + min_array[i]) / 2);
+}
+
 const calc_max_value = Math.max(...max_array)
-const calc_min_value = Math.max(...min_array)
+const calc_min_value = Math.min(...min_array)
 
 max_value_container.innerHTML = `${max_value_innerHTML} ${calc_max_value}`
 min_value_container.innerHTML = `${min_value_innerHTML} ${calc_min_value}`
+
+const avgPerMonth = avg_array.reduce((a, b) => a + b) / avg_array.length;
+const variance = avg_array.reduce((a, b) => a + Math.pow(b - avgPerMonth, 2), 0) / avg_array.length;
+
+avg_value_container.innerHTML = `${avg_value_innerHTML} ${variance}`
+        
+         
+   
 
 
 
