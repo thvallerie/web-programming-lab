@@ -29,9 +29,12 @@ function showDaysCount() {
     let daysCount = (today - birthday)/1000/60/60/24;
     daysCount = Math.floor(daysCount);
 
-    date = 'Количество дней с даты рождения: ' + daysCount;
-
-    document.getElementById('date').append(date);
+    if (birthday > today) {
+     date.innerHTML = 'Введена дата из будущего ';
+    }
+    else {
+     date.innerHTML = 'Количество дней с даты рождения '  + daysCount;
+    }
 }
 
 function clearThis() {
